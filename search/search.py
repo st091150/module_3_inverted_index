@@ -44,16 +44,11 @@ def main():
                       choices=['delta', 'gamma', None],
                       default=None,
                       help='Encoding type')
-    
     args = parser.parse_args()
     
     index_data = InvertedIndex.load(args.index)
-    results = search(index_data, args.query, args.encoding)
+    return search(index_data, args.query, args.encoding)
     
-    if isinstance(results, str):
-        print(results)
-    else:
-        print(results.to_string(index=False))
 
 if __name__ == "__main__":
     main()

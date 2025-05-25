@@ -19,6 +19,7 @@ def main():
     search_parser.add_argument('index', help='Path to index file')
     search_parser.add_argument('query', help='Search query')
     search_parser.add_argument('-e', '--encoding', choices=['delta', 'gamma', None], default=None, help='Encoding type')
+    search_parser.add_argument('-o', '--output', default='searchOutput.json', help='Output file')
 
     args = parser.parse_args()
 
@@ -30,7 +31,7 @@ def main():
         build_index(all_inputs, args.output)
     elif args.command == 'search':
         results = search(args.index, args.query, args.encoding)
-        print(results)
+        results.to_json(args.output, orient='records', lines=True)
 
 if __name__ == "__main__":
     main()
