@@ -1,7 +1,7 @@
 import argparse
 import glob
 
-from index_builer.build_index import build_index
+from index_builder.build_index import build_index
 from search.search import search
 
 def main():

@@ -2,7 +2,7 @@ import argparse
 from typing import Union
 import numpy as np
 
-from index_builer.inverted_index import InvertedIndex
+from index_builder.inverted_index import InvertedIndex
 from utils.utils import preprocess
 from utils.encoding import decode_delta_single, decode_gamma_single
 
