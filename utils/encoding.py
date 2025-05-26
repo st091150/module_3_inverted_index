@@ -17,7 +17,7 @@ def encode_delta_single(N: int) -> str:
 
 def decode_delta_single(encoded: str) -> int:
     if len(encoded) == 1:
-        return 1
+        return 0
     
     M = 0
     while M < len(encoded) and encoded[M] == '0':
